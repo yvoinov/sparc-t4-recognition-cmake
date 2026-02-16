@@ -23,8 +23,8 @@ add_compile_definitions sets the variable SPARC_T4, using which it is easy to im
 #	if defined(__sparc)
 #		if defined(SPARC_T4)
 #			define COUNT 128
-#			define PAUSE __asm__ __volatile__ ("wr %%g0, %[count], %%asr27\n\t" :: [count] "i" (COUNT) : "memory")
+#			define PAUSE __asm__ volatile ("wr %%g0, %[count], %%asr27\n\t" :: [count] "i" (COUNT) : "memory")
 #		else	
-#			define PAUSE __asm__ __volatile__ ("rd	%%ccr, %%g0\n\t" ::: "memory")
+#			define PAUSE __asm__ volatile ("rd	%%ccr, %%g0\n\t" ::: "memory")
 #		endif
 ```
