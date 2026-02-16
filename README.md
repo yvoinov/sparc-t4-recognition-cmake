@@ -5,7 +5,7 @@
 
 SPARC-T4+ processors, in addition to support for backward compatibility with the SPARCv9 architecture, have new specific assembler instructions.
 
-Since compilers (GCC, CLang, etc.) do not bother to recognize SPARC processors at the preprocessor level (excluding SPARCv8 and SPARCv9 architectures), I had to write a macro.
+Since compilers (GCC, CLang, etc.) do not bother to recognize SPARC processors at the preprocessor level (excluding SPARCv8 and SPARCv9 architectures), I had to write a module.
 
 Due to the fact that T4 processors differ from classic SPARCv9 processors by the presence of ASR registers, the recognition is very simple: we recognize SPARC by means of the compiler, then we try to compile the T4-specific assembly instruction WRPAUSE. In classic SPARCv9, ASR registers are absent, so the assembler returns Invalid operand.
 
@@ -17,7 +17,7 @@ To use, add include to CMakeLists.txt before targets as shown below (an example)
 include(cmake_check_sparc_t4.cmake)
 ```
 
-ACTION-IF-FOUND sets the variable SPARC_T4, using which it is easy to implement processor-specific conditional compilation:
+add_compile_definitions sets the variable SPARC_T4, using which it is easy to implement processor-specific conditional compilation:
 
 ```c
 #	if defined(__sparc)
