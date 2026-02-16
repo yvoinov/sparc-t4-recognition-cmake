@@ -1,7 +1,7 @@
 # sparc-t4-recognition
-[![License](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://github.com/yvoinov/sparc-t4-recognition/blob/main/LICENSE)
+[![License](https://img.shields.io/badge/License-MIT--Clause-blue.svg)](https://github.com/yvoinov/sparc-t4-recognition-cmake/blob/main/LICENSE)
 
-## M4 macro for autoconf to recognize SPARC T4+ CPUs
+## CMake module to recognize SPARC T4+ CPUs
 
 SPARC-T4+ processors, in addition to support for backward compatibility with the SPARCv9 architecture, have new specific assembler instructions.
 
